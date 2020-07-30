@@ -9,7 +9,7 @@ pipeline {
         stage('git clone') {
             steps {
                 echo 'cloning git repo'
-                git 'http://ec2-54-82-12-211.compute-1.amazonaws.com/root/mytestrepo.git'
+                git 'https://github.com/siva564/automaticdeployment.git'
             }
         }
     
