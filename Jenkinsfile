@@ -1,8 +1,8 @@
 pipeline {
   agent {label 'master'}
       tools { 
-        maven 'maven' 
-        jdk 'java8' 
+        maven 'sivamaven' 
+        jdk 'java' 
     }
     
     stages {
