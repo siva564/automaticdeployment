@@ -26,24 +26,7 @@ pipeline {
                 echo 'all test cases passed'
           }
         }
-        
-        stage('Deploy Artifacts') { 
-             steps {
-                script {			 
-                     def server = Artifactory.server 'jfro' 
-                     def uploadSpec = """{
-                       "files": [
-                            {
-                              "pattern": "/var/lib/jenkins/workspace/MyTestJob/target/*.war",
-                              "target": "myrepo/"
-                            }
-                                ]
-                    }"""
-	                server.upload(uploadSpec)
-	            }
-	          }
-	        }
-	        stage('Build Docker Image') {
+        stage('Build Docker Image') {
              steps {
                echo 'Building Docker image'
                sh 'docker build -t test .'
