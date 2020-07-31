@@ -1,4 +1,8 @@
 pipeline {
+	    environment {
+    	    registry = "siva564/lop"
+    	    registryCredential = 'llllllllll'
+	}	
   agent {label 'master'}
       tools { 
         maven 'sivamaven' 
