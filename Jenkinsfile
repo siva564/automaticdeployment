@@ -30,12 +30,16 @@ pipeline {
                 echo 'all test cases passed'
           }
         }
-        stage('Build Docker Image') {
-             steps {
-               echo 'Building Docker image'
-               sh 'docker build -t test   .'
-                }
-            }
-	    }
+         stage('Building image') 
+	{
+     	 	steps
+		{
+        		script 
+			{
+       				   docker.build registry + ":$BUILD_NUMBER"
+        		}
+      		}
+    	}
+     }
          
   }
